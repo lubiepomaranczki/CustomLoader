@@ -157,4 +157,7 @@
       <Name>CustomLoader</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon.png" />
+  </ItemGroup>
 </Project>

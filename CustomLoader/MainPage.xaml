@@ -1,7 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CustomLoader" x:Class="CustomLoader.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:CustomLoader" 
+             x:Class="CustomLoader.MainPage">
+    <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="{Binding LongText}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <StackLayout Grid.Row="0" BackgroundColor="#80d3d3d3" IsVisible="{Binding IsBusy}" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+<!--        <ActivityIndicator Grid.Row="0" 
+                           IsVisible="{Binding IsBusy}" 
+                           IsRunning="{Binding IsBusy}" 
+                           BackgroundColor="Red" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"/>-->
+        <local:CustomLoader Grid.Row="0" 
+                      Source="Icon.png"
+                      RotationLenght="500"
+                      IsVisible="{Binding IsBusy}" 
+                      IsRunning="{Binding IsBusy}"
+                      VerticalOptions="Center" 
+                      HorizontalOptions="Center"/>
+    </Grid>
 </ContentPage>
