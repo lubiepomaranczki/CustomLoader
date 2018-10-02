@@ -13,7 +13,7 @@ namespace CustomLoader
 
         #endregion
 
-        #region Properties
+        #region Binadables
 
         public static BindableProperty IsRunningProperty = BindableProperty.Create(
             propertyName: nameof(IsRunning),
