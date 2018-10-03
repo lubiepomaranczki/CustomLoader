@@ -39,6 +39,18 @@ namespace CustomLoader
             set { SetValue(RotationLenghtProperty, value); }
         }
 
+        public static BindableProperty EasingProperty = BindableProperty.Create(
+            propertyName: nameof(Easing),
+            returnType: typeof(Easing),
+            declaringType: typeof(CustomLoader),
+            defaultValue: Easing.CubicInOut);
+
+        public Easing Easing
+        {
+            get { return (Easing)GetValue(EasingProperty); }
+            set { SetValue(EasingProperty, value); }
+        }
+
         #endregion
 
         #region Constructor(s)
@@ -80,8 +92,8 @@ namespace CustomLoader
         {
             while (!cancellation.IsCancellationRequested)
             {
-                await element.RotateTo(360, (uint)RotationLenght, Easing.CubicInOut);
-                await element.RotateTo(0, 0); // reset to initial position
+                await element.RotateTo(360, (uint)RotationLenght, this.Easing);
+                await element.RotateTo(0, 0);
             }
         }
 

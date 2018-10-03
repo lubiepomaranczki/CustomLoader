@@ -8,6 +8,8 @@ namespace CustomLoader
         {
             InitializeComponent();
             BindingContext = new MainPageViewModel();
+
+            loader.Easing = Easing.CubicIn;
         }
     }
 }

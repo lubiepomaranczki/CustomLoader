@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:CustomLoader" 
+             xmlns:easing="clr-namespace:Xamarin.Forms" 
              x:Class="CustomLoader.MainPage">
     <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
         <Grid.RowDefinitions>
@@ -15,12 +16,14 @@
                            BackgroundColor="Red" 
                            VerticalOptions="Center" 
                            HorizontalOptions="Center"/>-->
-        <local:CustomLoader Grid.Row="0" 
-                      Source="Icon.png"
-                      RotationLenght="500"
-                      IsVisible="{Binding IsBusy}" 
-                      IsRunning="{Binding IsBusy}"
-                      VerticalOptions="Center" 
-                      HorizontalOptions="Center"/>
+        <local:CustomLoader 
+            x:Name="loader"
+            Grid.Row="0" 
+            Source="Icon.png"
+            RotationLenght="2500"
+            IsVisible="{Binding IsBusy}" 
+            IsRunning="{Binding IsBusy}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
     </Grid>
 </ContentPage>
